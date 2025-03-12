@@ -1,0 +1,59 @@
+{
+  "name": "linesight",
+  "displayName": "LineSight",
+  "description": "Shows line counts next to files in the explorer",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "linesight.refresh",
+        "title": "Refresh Line Counts",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "linesight.refresh",
+          "when": "view == explorer",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^16.18.34",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "typescript": "^5.1.6"
+  },
+  "keywords": ["line count", "file explorer", "productivity"],
+  "author": "VSCode User",
+  "publisher": "vscode-user",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/linesight.git"
+  }
+}
