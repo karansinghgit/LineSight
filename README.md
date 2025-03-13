@@ -1,15 +1,29 @@
 # LineSight
 
-<img src="resources/images/logo.png" width="128" height="128" alt="LineSight Logo">
-
 LineSight is a VS Code extension that shows the number of lines next to each file in the file explorer, helping you quickly understand the size of files in your project.
+
+The extension is available on the VSCode Marketplace for installing:
+
+https://marketplace.cursorapi.com/items?itemName=2048Labs.linesight
+
+## Why I built this?
+
+A common issue with LLM's is the size of the context window, and even though modern IDE's like Cursor support better chunking and indexing for large files, it still performs much better when working with smaller files.
+
+LineSight allows you to quickly glance at line counts to understand when you need to refactor a particular file.
+
+Efficient caching, progressive loading and prioritization make this extension very performant when running in the background.
+
+Hope you find it useful :)
+
+<img src="resources/images/logo.png" width="128" height="128" alt="LineSight Logo">
 
 ## Features
 
 - **Line Count Badges**: Shows the number of lines next to each file in the explorer
 - **Auto-Updates**: Line counts automatically update when files are edited
 - **Refresh Button**: Provides a refresh button in the explorer title bar to manually update counts
-- **Abbreviated Display**: Shows abbreviated counts (like "2k" for 2000 lines) as badges
+- **Abbreviated Display**: Shows abbreviated counts (like "2K" for 2000+ lines) as badges
 - **Exact Counts in Tooltips**: Hover over a badge to see the exact line count
 - **Skip Large Directories**: Ignores directories like node_modules and .git for better performance
 - **Optimized Performance**: Minimal background overhead with smart caching and throttling
