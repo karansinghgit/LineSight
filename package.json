@@ -1,15 +1,19 @@
 {
   "name": "linesight",
   "displayName": "LineSight",
-  "description": "Shows line count decorations in the VS Code file explorer",
-  "version": "1.0.0",
-  "publisher": "linesight",
+  "description": "Shows line counts next to files in the explorer",
+  "version": "0.0.5",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.80.0"
   },
   "categories": [
     "Other"
   ],
+  "icon": "resources/images/logo.png",
+  "galleryBanner": {
+    "color": "#2C2C32",
+    "theme": "dark"
+  },
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -18,81 +22,18 @@
     "commands": [
       {
         "command": "linesight.refresh",
-        "title": "LineSight: Refresh Line Counts"
-      },
-      {
-        "command": "linesight.toggle",
-        "title": "LineSight: Toggle Line Count Decorations"
+        "title": "Refresh Line Counts",
+        "icon": "$(refresh)"
       }
     ],
-    "configuration": {
-      "title": "LineSight",
-      "properties": {
-        "linesight.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable or disable the line count decorations"
-        },
-        "linesight.countLinesOnStartup": {
-          "type": "boolean",
-          "default": true,
-          "description": "Automatically count lines when VS Code starts"
-        },
-        "linesight.excludeFolders": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": [
-            "node_modules", ".git", "dist", "build", "out", ".vscode", "bin", "obj",
-            "temp", "tmp", "cache", ".cache", "vendor", "logs", "public", 
-            ".next", ".nuxt", ".output", ".webpack", ".parcel-cache"
-          ],
-          "description": "List of folder names to exclude from line counting"
-        },
-        "linesight.excludeFiles": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": [
-            "package-lock.json", "yarn.lock", "pnpm-lock.yaml", ".DS_Store",
-            "thumbs.db", "desktop.ini", ".gitignore", ".gitattributes",
-            ".eslintcache", ".stylelintcache"
-          ],
-          "description": "List of file names to exclude from line counting"
-        },
-        "linesight.maxFilesToProcess": {
-          "type": "number",
-          "default": 5000,
-          "description": "Maximum number of files to process during bulk operations"
-        },
-        "linesight.maxFileSizeToRead": {
-          "type": "number",
-          "default": 5000,
-          "description": "Maximum file size in KB to read fully (larger files will be estimated)"
-        },
-        "linesight.scanDelay": {
-          "type": "number",
-          "default": 3000,
-          "description": "Delay in milliseconds before starting to scan files after startup"
-        },
-        "linesight.throttleTime": {
-          "type": "number",
-          "default": 500,
-          "description": "Base throttle time in milliseconds for refreshing decorations"
-        },
-        "linesight.cacheLifetime": {
-          "type": "number",
-          "default": 24,
-          "description": "Lifetime of cached line counts in hours"
-        },
-        "linesight.lowPerformanceMode": {
-          "type": "boolean",
-          "default": false,
-          "description": "Enable low performance mode to reduce resource usage (useful for large projects or slower machines)"
+    "menus": {
+      "view/title": [
+        {
+          "command": "linesight.refresh",
+          "when": "view == explorer",
+          "group": "navigation"
         }
-      }
+      ]
     }
   },
   "scripts": {
@@ -101,21 +42,23 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@types/vscode": "^1.60.0",
-    "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.42.0",
-    "eslint": "^8.26.0",
-    "typescript": "^4.8.4"
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^16.18.34",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "typescript": "^5.1.6"
   },
   "keywords": ["line count", "file explorer", "productivity"],
-  "author": "VSCode User",
+  "author": "Karan Singh",
+  "publisher": "2048Labs",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/linesight.git"
+    "url": "https://github.com/karansinghgit/linesight.git"
   }
 }

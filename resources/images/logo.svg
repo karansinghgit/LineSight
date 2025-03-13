@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="16" fill="#2C2C32"/>
+  
+  <!-- Document lines -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <rect x="30" y="28" width="50" height="3" rx="1.5"/>
+    <rect x="30" y="38" width="68" height="3" rx="1.5"/>
+    <rect x="30" y="48" width="42" height="3" rx="1.5"/>
+    <rect x="30" y="58" width="60" height="3" rx="1.5"/>
+    <rect x="30" y="68" width="55" height="3" rx="1.5"/>
+    <rect x="30" y="78" width="30" height="3" rx="1.5"/>
+    <rect x="30" y="88" width="65" height="3" rx="1.5"/>
+  </g>
+  
+  <!-- Line numbers -->
+  <g fill="#FFFFFF" opacity="0.6">
+    <text x="20" y="31" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="10" text-anchor="end">1</text>
+    <text x="20" y="41" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="10" text-anchor="end">2</text>
+    <text x="20" y="51" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="10" text-anchor="end">3</text>
+    <text x="20" y="61" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="10" text-anchor="end">4</text>
+    <text x="20" y="71" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="10" text-anchor="end">5</text>
+    <text x="20" y="81" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="10" text-anchor="end">6</text>
+    <text x="20" y="91" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="10" text-anchor="end">7</text>
+  </g>
+  
+  <!-- Badge -->
+  <circle cx="90" cy="45" r="22" fill="#0078D7"/>
+  <text x="90" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">7</text>
+</svg> 
