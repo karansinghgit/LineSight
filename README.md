@@ -50,7 +50,7 @@ Once installed, LineSight will automatically display line counts next to your fi
 ## Installation
 
 1. Install the extension from the VS Code Marketplace
-2. Restart VS Code
+2. Reload VS Code Window
 3. Line counts will automatically appear next to files in the explorer
 
 ## Extension Settings
